@@ -1,0 +1,28 @@
+server:
+  port: 9031
+#  servlet:
+#    context-path: /${spring.application.name}
+nacos:
+  namespace: d9f88730-1a27-490b-8ebe-d4317479d4a6
+  url: 10.0.0.8:8848
+spring:
+  application:
+    name: haro-order-ali
+  profiles: #启用开发配置
+    active: dev
+  cloud:
+    nacos:
+      discovery: #注册中心
+        server-addr: ${nacos.url}
+        namespace: ${nacos.namespace}
+      config: #配置中心
+        server-addr: ${nacos.url}
+        namespace: ${nacos.namespace}
+        #文件拓展名，默认properties
+        file-extension: yaml
+#        shared-configs: #设置公共配置
+#          - common-log.yml
+#        extension-configs: # 常规配置文件 ---> 优先级大于 shared-configs，在 shared-configs 之后加载
+#          - data-id: nacos-config-advanced.yaml
+#            group: SPRING_CLOUD_EXAMPLE_GROUP
+#            refresh: true
