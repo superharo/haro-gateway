@@ -28,6 +28,12 @@
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
 
+        <!-- 负载均衡缓存 -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
+
         <!-- nacos服务注册/发现-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
